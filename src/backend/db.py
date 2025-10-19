@@ -7,7 +7,7 @@ DATABASE_URL = os.getenv(
     "postgresql+psycopg://postgres:postgres@localhost:5432/mohl",
 )
 
-engine = create_async_engine(DATABASE_URL, pool_pre_ping=True)  # ← remove async_fallback
+engine = create_async_engine(DATABASE_URL, pool_pre_ping=True)
 SessionLocal = async_sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
 
 class Base(DeclarativeBase): ...

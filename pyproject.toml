@@ -27,9 +27,9 @@ dev = [
 ]
 
 [tool.ruff]
+exclude = ["migrations"]
 line-length = 100
 target-version = "py314"
-exclude = ["migrations"]
 
 [tool.ruff.lint]
 select = ["E","F","I","UP","B","ASYNC","PYI"]
@@ -39,16 +39,17 @@ select = ["E","F","I","UP","B","ASYNC","PYI"]
 line-length = 100
 
 [tool.pyright]
-include = ["app"]
+executionEnvironments = [{ root = "src" }]
+include = ["src"]
 pythonVersion = "3.14"
-typeCheckingMode = "strict"
 reportMissingTypeStubs = "warning"
-venvPath = "."
+typeCheckingMode = "strict"
 venv = ".venv"
+venvPath = "."
 
 [project.scripts]
 backend = "backend:main"
 
 [build-system]
-requires = ["uv_build>=0.9.3,<0.10.0"]
 build-backend = "uv_build"
+requires = ["uv_build>=0.9.3,<0.10.0"]
