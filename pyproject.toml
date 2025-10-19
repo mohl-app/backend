@@ -48,7 +48,7 @@ venv = ".venv"
 venvPath = "."
 
 [project.scripts]
-backend = "backend:main"
+backend = "backend.main:main"
 
 [build-system]
 build-backend = "uv_build"
